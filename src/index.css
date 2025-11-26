@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------- */
+/* GLOBAL ARC MUSICALS THEME     */
+/* ----------------------------- */
+
+body {
+  @apply bg-arcdark text-white overflow-x-hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Utility */
+.arc-glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Gold text gradient */
+.arc-gold-text {
+  background: linear-gradient(to right, #F4D03F, #FFB703, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero background animation */
+.hero-animate-bg {
+  background: radial-gradient(circle at center, rgba(255, 180, 0, 0.25), transparent 70%),
+              linear-gradient(to bottom, #0A0A0A, #1A1A1A, #000000);
+  animation: heroGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  from { opacity: 0.85; }
+  to { opacity: 1; }
+}
+
+/* Floating notes animation */
+@keyframes floatNote {
+  0% { transform: translateY(0) translateX(0); opacity: 0.5; }
+  50% { transform: translateY(-40px) translateX(10px); opacity: 1; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+}
+
+.float-note {
+  animation: floatNote 5s infinite ease-in-out;
+}
+
+/* Song card hover */
+.song-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px #F4D03F55;
+  transition: 0.3s ease;
+}
+
+@keyframes slideUp { from { transform: translateY(120px); } to { transform: translateY(0); } }
+.animate-slideUp { animation: slideUp 350ms cubic-bezier(.22,.9,.3,1); }
